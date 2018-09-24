@@ -47,7 +47,16 @@ public class AdviceTest {
     @Test
     void should_test_return_advice() {
         invokerMethod.returnTest();
-        assertEquals(Arrays.asList("returnJointPoint"),Loggers.getLogs());
+        assertEquals(Arrays.asList("returnJointPoint", "return"),Loggers.getLogs());
 
+    }
+    @Test
+    void should_test_returnWithVoid_advice() {
+        invokerMethod.returnWithVoidTest();
+        assertEquals(Arrays.asList("returnWithVoidJointPoint", "return"),Loggers.getLogs());
+    }
+    @Test
+    void should_test_around_advice() {
+//        invokerMethod.aroundTest();
     }
 }

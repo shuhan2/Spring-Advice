@@ -2,10 +2,7 @@ package thoughtworks.com.advicetest.AOP;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -24,10 +21,19 @@ public class MethodAopProvider {
 
     }
 
-    @AfterReturning("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.afterTest()))")
+    @AfterReturning("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.returnTest()))")
     public void returnMethod() {
         Loggers.logger("return");
     }
+
+    @AfterReturning("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.returnWithVoidTest()))")
+    public void returnWithVoidMethod() {
+        Loggers.logger("return");
+    }
+
+
+
+
 
 
 
