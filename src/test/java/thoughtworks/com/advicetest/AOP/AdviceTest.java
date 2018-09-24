@@ -43,4 +43,11 @@ public class AdviceTest {
         assertEquals(Arrays.asList("afterJointPoint","after"),Loggers.getLogs());
 
     }
+
+    @Test
+    void should_test_return_advice() {
+        invokerMethod.returnTest();
+        assertEquals(Arrays.asList("returnJointPoint"),Loggers.getLogs());
+
+    }
 }

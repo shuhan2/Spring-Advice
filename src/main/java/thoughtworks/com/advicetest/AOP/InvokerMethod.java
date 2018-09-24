@@ -16,4 +16,9 @@ public class InvokerMethod {
         Loggers.logger("afterJointPoint");
 
     }
+
+    public Object returnTest() {
+        Loggers.logger("returnJointPoint");
+        return "returnJointPoint";
+    }
 }
