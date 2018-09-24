@@ -8,8 +8,12 @@ public class InvokerMethod {
 
 
     public void beforeTest() {
-        Loggers.logger("beforeTest");
+        Loggers.logger("beforeJointPoint");
     }
 
 
+    public void afterTest() {
+        Loggers.logger("afterJointPoint");
+
+    }
 }

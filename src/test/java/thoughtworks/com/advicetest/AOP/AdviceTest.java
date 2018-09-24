@@ -34,6 +34,13 @@ public class AdviceTest {
     @Test
     void should_test_before_advice() {
         invokerMethod.beforeTest();
-        assertEquals(Arrays.asList("before","beforeTest"),Loggers.getLogs());
+        assertEquals(Arrays.asList("before","beforeJointPoint"),Loggers.getLogs());
+    }
+
+    @Test
+    void should_test_after_advice() {
+        invokerMethod.afterTest();
+        assertEquals(Arrays.asList("afterJointPoint","after"),Loggers.getLogs());
+
     }
 }
