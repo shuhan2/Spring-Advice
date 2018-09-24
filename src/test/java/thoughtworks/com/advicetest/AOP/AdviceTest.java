@@ -24,7 +24,6 @@ public class AdviceTest {
     @BeforeEach
     void setUp() {
         MockMvc mockMvc =  MockMvcBuilders.webAppContextSetup(context).build();
-//        Loggers.clear();
     }
 
     @Autowired
@@ -34,20 +33,20 @@ public class AdviceTest {
     @Test
     void should_test_before_advice() {
         invokerMethod.beforeTest();
-        assertEquals(Arrays.asList("before","beforeJointPoint"),Loggers.getLogs());
+        assertEquals(Arrays.asList("before","beforeJointPoint"), Loggers.getLogs());
     }
 
     @Test
     void should_test_after_advice() {
         invokerMethod.afterTest();
-        assertEquals(Arrays.asList("afterJointPoint","after"),Loggers.getLogs());
+        assertEquals(Arrays.asList("afterJointPoint","after"), Loggers.getLogs());
 
     }
 
     @Test
     void should_test_return_advice() {
         invokerMethod.returnTest();
-        assertEquals(Arrays.asList("returnJointPoint", "return"),Loggers.getLogs());
+        assertEquals(Arrays.asList("returnJointPoint", "return"), Loggers.getLogs());
 
     }
     @Test
@@ -55,8 +54,18 @@ public class AdviceTest {
         invokerMethod.returnWithVoidTest();
         assertEquals(Arrays.asList("returnWithVoidJointPoint", "return"),Loggers.getLogs());
     }
+
     @Test
-    void should_test_around_advice() {
-//        invokerMethod.aroundTest();
+    void should_test_around_with_void_advice() {
+        invokerMethod.aroundWithVoidTest();
+        assertEquals(Arrays.asList("aroundWithVoidJointPoint"), Loggers.getLogs());
+
+    }
+
+    @Test
+    void should_test_around_with_return_advice() {
+        invokerMethod.aroundWithReturnTest();
+        assertEquals(Arrays.asList("aroundWithReturn"), Loggers.getLogs());
+
     }
 }

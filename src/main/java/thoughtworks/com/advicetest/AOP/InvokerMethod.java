@@ -26,6 +26,12 @@ public class InvokerMethod {
         Loggers.logger("returnWithVoidJointPoint");
     }
     public void aroundWithVoidTest() {
-        Loggers.logger("aroundWithVoid");
+        Loggers.logger("aroundWithVoidJointPoint");
     }
+
+    public Object aroundWithReturnTest() {
+        Loggers.logger("aroundWithReturnJointPoint");
+        return "aroundWithReturnJointPoint";
+    }
+
 }

@@ -31,12 +31,13 @@ public class MethodAopProvider {
         Loggers.logger("return");
     }
 
-
-
-
-
-
-
-
-
+    @Around("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.returnWithVoidTest()))")
+    public void aroundWithVoidMethod() {
+        Loggers.logger("aroundWithVoid");
+    }
+    @Around("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.aroundWithReturnTest()))")
+    public void aroundWithReturnMethod() {
+        Loggers.logger("aroundWithReturn");
+    }
 }
+
