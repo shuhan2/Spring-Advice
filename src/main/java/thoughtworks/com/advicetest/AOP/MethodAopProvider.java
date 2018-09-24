@@ -35,9 +35,20 @@ public class MethodAopProvider {
     public void aroundWithVoidMethod() {
         Loggers.logger("aroundWithVoid");
     }
+
     @Around("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.aroundWithReturnTest()))")
     public void aroundWithReturnMethod() {
         Loggers.logger("aroundWithReturn");
+    }
+
+    @AfterThrowing("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.afterThrowTest())")
+    public void afterThrow() {
+        Loggers.logger("afterThrow");
+    }
+
+    @AfterThrowing("execution(* thoughtworks.com.advicetest.AOP.InvokerMethod.afterThrowWithoutThrowTest())")
+    public void afterThrowWithoutThrow() {
+        Loggers.logger("afterThrow");
     }
 }
 

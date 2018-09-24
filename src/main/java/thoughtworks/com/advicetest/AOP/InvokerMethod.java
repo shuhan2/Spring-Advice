@@ -34,4 +34,13 @@ public class InvokerMethod {
         return "aroundWithReturnJointPoint";
     }
 
+    public void afterThrowTest() {
+        Loggers.logger("afterThrowJointPoint");
+        throw new IllegalArgumentException();
+    }
+
+    public void afterThrowWithoutThrowTest() {
+        Loggers.logger("afterThrowJointPointWithoutThrow");
+
+    }
 }

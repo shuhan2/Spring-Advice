@@ -68,4 +68,25 @@ public class AdviceTest {
         assertEquals(Arrays.asList("aroundWithReturn"), Loggers.getLogs());
 
     }
+
+    @Test
+    void should_test_after_throw_advice() {
+        try {
+            invokerMethod.afterThrowTest();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        assertEquals(Arrays.asList("afterThrowJointPoint", "afterThrow"), Loggers.getLogs());
+
+    }
+
+    @Test
+    void should_test_after_throw_advice_when_not_throw() {
+
+        invokerMethod.afterThrowWithoutThrowTest();
+
+        assertEquals(Arrays.asList("afterThrowJointPointWithoutThrow"), Loggers.getLogs());
+
+    }
+
 }
